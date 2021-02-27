@@ -1,0 +1,67 @@
+/* Titlebar for the main window and the dialogs */
+.title-bar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background: #3f3f3f;
+  color: #fff;
+  align-items: center;
+  height: 2.3rem;
+  -webkit-app-region: drag;
+  user-select: none;
+  box-shadow: 0 0 1px 0px #000;
+  z-index: 1;
+}
+
+.titlebar-elements {
+  display: flex;
+  align-items: center;
+}
+
+.titlebar-icon {
+  display: flex;
+  align-items: center;
+  height: 2.3rem;
+  line-height: 0;
+  padding: 0 1.1rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  -webkit-app-region: no-drag;
+}
+
+.titlebar-icon:hover {
+  opacity: 1;
+}
+
+.titlebar-button {
+  display: flex;
+  align-items: center;
+  height: 2.3rem;
+  line-height: 0;
+  padding: 0 1.1rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  -webkit-app-region: no-drag;
+}
+
+.titlebar-button:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.close-button:hover {
+  background: red;
+}
+
+.dialog-title-bar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background: #3f3f3f;
+  color: #fff;
+  align-items: center;
+  height: 2.3rem;
+  user-select: none;
+  box-shadow: 0 0 1px 0px #000;
+  z-index: 1;
+}

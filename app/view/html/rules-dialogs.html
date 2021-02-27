@@ -1,0 +1,207 @@
+<!-- Main class containing all dialogs for rules -->
+<div class="all-rules-container">
+  <!-- Add Prefix dialog -->
+  <div class="rules-dialog center-element" id="prefix-form">
+    <form class="rules-form-container">
+      <h1>Add Prefix</h1>
+      <input
+        type="text"
+        placeholder="Enter prefix here"
+        id="prefix-input" pattern='[^/&gt;&lt;\\|:?"*]+' title="A file name can't contain \/:*?&quot;&lt;&gt;|"
+        required
+      />
+      <button type="submit" class="btn" id="prefix-btn">Add</button>
+      <button type="button" class="btn cancel cancelRule" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Add Suffix dialog -->
+  <div class="rules-dialog center-element" id="suffix-form">
+    <form class="rules-form-container">
+      <h1>Add Suffix</h1>
+      <input
+        type="text"
+        placeholder="Enter Suffix here"
+        id="suffix-input" pattern='[^/&gt;&lt;\\|:?"*]+' title="A file name can't contain \/:*?&quot;&lt;&gt;|"
+        required
+      />
+      <button type="submit" class="btn" id="suffix-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Trim name dialog -->
+  <div class="rules-dialog center-element" id="trim-form">
+    <form class="rules-form-container">
+      <h1>Trim</h1>
+      <input type="radio" id="trim-begining" name="trim" checked />
+      <label for="trim-begining">Begining</label><br />
+      <input type="radio" id="trim-end" name="trim" />
+      <label for="trim-end">End</label><br />
+      <input
+        type="text"
+        placeholder="Enter trim length here"
+        id="trim-length-input" pattern="[0-9]*" title="Please enter a number."
+        required
+      />
+      <button type="submit" class="btn" id="trim-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Replace name dialog -->
+  <div class="rules-dialog center-element" id="replace-form">
+    <form class="rules-form-container">
+      <h1>Replace words</h1>
+      <input type="text" placeholder="Find" id="find-words-to-replace" required />
+      <input type="text" placeholder="Replace" id="replace-with" pattern='[^/&gt;&lt;\\|:?"*]+' title="A file name can't contain \/:*?&quot;&lt;&gt;|" required />
+
+      <button type="submit" class="btn" id="replace-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Case change dialog -->
+  <div class="rules-dialog center-element" id="case-change-form">
+    <form class="rules-form-container">
+      <h1>Change Case</h1>
+      <input type="radio" id="upper-case" name="caseChange" checked/>
+      <label for="upper-case">UPPERCASE</label><br />
+      <input type="radio" id="lower-case" name="caseChange" />
+      <label for="lower-case">lowercase</label><br />
+
+      <button type="button" class="btn" id="case-change-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Remove words dialog -->
+  <div class="rules-dialog center-element" id="remove-words-form">
+    <form class="rules-form-container">
+      <h1>Remove words</h1>
+      <input type="text" placeholder="Remove" id="words-to-remove" pattern='[^/&gt;&lt;\\|:?"*]+' title="A file name can't contain \/:*?&quot;&lt;&gt;|" required />
+
+      <button type="submit" class="btn" id="remove-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Add numbering dialog -->
+  <div class="rules-dialog center-element" id="numbering-form">
+    <form class="rules-form-container">
+      <h1>Numbering</h1>
+      <input
+        type="text"
+        placeholder="Start from"
+        id="start-numbering-from"
+        pattern="[0-9]*" title="Please enter a number."
+        required
+      />
+
+      <button type="submit" class="btn" id="numbering-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Add TimeStamp dialog -->
+  <div class="rules-dialog center-element" id="timestamp-form">
+    <form class="rules-form-container">
+      <h1>Time Stamp</h1>
+      <label>Apply Using:</label><br />
+      <input
+        type="radio"
+        id="created-date"
+        name="time-stamp"
+        checked
+      />
+      <label for="created-date">Created date and time</label><br />
+      <input
+        type="radio"
+        id="accessed-date"
+        name="time-stamp"
+      />
+      <label for="accessed-date">Accessed date and time</label><br />
+      <input
+        type="radio"
+        id="modified-date"
+        name="time-stamp"
+      />
+      <label for="modified-date">Modified date and time</label><br />
+      <select id="timestamp-style-list" class="btn btn-secondary dropdown-toggle">
+        <option value='{"en-US":{"dateStyle":"long"}}'>January-25-2020</option>
+        <option value='{"en-US":{"dateStyle":"full"}}'>
+          Monday-January-25-2020
+        </option>
+        <option value='{"en-US":{"dateStyle":"medium"}}'>Jan-25-2020</option>
+        <option value='{"en-US":{"dateStyle":"short"}}'>01-25-2020</option>
+        <option
+          value='{"en-US":{"month": "numeric", "day": "numeric","year": "2-digit"}}'
+        >
+          01-25-20
+        </option>
+        <option value='{"en-GB":{"dateStyle":"long" }}'>
+          25-January-2020
+        </option>
+        <option value='{"en-GB":{"dateStyle":"full"}}'>
+          Monday-25-January-2020
+        </option>
+        <option value='{"en-GB":{"dateStyle":"medium"}}'>25-Jan-2020</option>
+        <option value='{"en-GB":{"dateStyle":"short"}}'>25-01-2020</option>
+      </select>
+      <input
+        type="text"
+        placeholder="Separator"
+        id="timestamp-separator"
+        pattern='[^/&gt;&lt;\\|:?"*]+' title="A file name can't contain \/:*?&quot;&lt;&gt;|"
+        required
+      />
+      <select id="timestamp-surround-with" 
+        class="btn btn-secondary dropdown-toggle"
+      >
+        <option value="  ">Select</option>
+        <option value="()">()</option>
+        <option value="{}">{}</option>
+        <option value="[]">[]</option>
+        <option value="__">__</option>
+        <option value="--">--</option>
+      </select>
+      <button type="submit" class="btn" id="timestamp-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+
+  <!-- Insert words dialog -->
+  <div class="rules-dialog center-element" id="insert-at-form">
+    <form class="rules-form-container">
+      <h1>Insert At</h1>
+      <input type="text" placeholder="Insert" id="insert-input" pattern='[^/&gt;&lt;\\|:?"*]+' title="A file name can't contain \/:*?&quot;&lt;&gt;|" required />
+      <input
+        type="text"
+        placeholder="Position"
+        id="insertAtPositionInput"
+        pattern="[0-9]*" title="Please enter a number."
+        required
+      />
+      <button type="submit" class="btn" id="insert-btn">Add</button>
+      <button type="button" class="btn cancel" id="close-dialog-btn">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

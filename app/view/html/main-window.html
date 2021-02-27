@@ -1,0 +1,146 @@
+<div class="border border main-window" aria-live="assertive" aria-atomic="true">
+  <!-- Title bar  -->
+  <div class="title-bar">
+    <div class="titlebar-icon">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADeUlEQVRYhcVXUUsiURSe1162P7G97/6c7Q/NudfRmMyHcMcsUVSMhMokhDBftJUQ3IceiogCcVMRK8NxZr59KC+Nzuht2ejAhYFz5n7fveece7+rKJJGRMtEtMo5j6qqWldVtUNEYyIav37XGWM/iWiViJZl511ouq6vEJHBGBsSEWTGa6yh6/rKPwNns9klxpjGGDNlgT2ImIwxLZvNLr0LPBQKfeWcN/8VeHpwzpuhUOirFDjn/BsR/flf4G/GH1VVvy9c+QeBCxKcc++6yGazS6qqzt32YDCIXC6HcrmMs7MzVKtVlEolpFIpBAIB6XR41gRjTPP7aW1tDbVaDaPRCH42HA5RLpfBOZcpTs0Fruv6il+1G4aBfr8vgEajEbrdLu7v7/H09DRD5OrqaiEJxpjpalEiMrwCdV3H4+MjTNNEvV7H1tbWTEwymcRgMHCRODo6kkmHoSiKoqyvr3/xO2RisRgqlQrC4fAkfyiXy0gkEq64dDrtInB5eSmThiERLSuc8x+yVdxoNAAAx8fH04XlItBqtWS7YlXhnEdlguPxOBzHAQDs7+/PdMdbu76+lu2IqMIY+yUTfHFxIQDi8bjLl8lkXAQqlYoUAVVV68rrTTY3cGNjA7ZtAwAsy0IgEADnHMFgEMFgEO12W4A/Pz+LmpEg0FHo5UqdG3hyciIAbm5ukEqlMBqN4DgOHh4ehG88HiOdTsvmH0Q0liLQarUEyOnpKTKZjKiHid3d3SEWi70H/IXAohREIhEXUDKZBBFhe3sbvV4PAGCaJkKh0HvBRQrq84IKhYIAtywLmqYJ3/n5ufDl8/l3EyCiuvIqo3yDms2mAOn1ei5fqVQSvkajMfPv3t7e3LQwxn4q9KLhfIM6nY4A6Xa7Ll8ulxO+fr/v8uXzedi2jUKhMG8HVhUiWvY7ijnnov28CBiG4aqPnZ0dEBEODg5g2zZs28bm5qbf6l+O4nmXUTgcdgFME9A0bYbg2wOrVqvNW72x8Dqe7oB2uz0z0e3tLbys2WyCMea3enNGMXsJkkAgAMuyAACO46BYLM5MlkqlMB6PBfBgMMDh4eHc6p8RJBNJ5qWEi8UiqtUqotGo74SRSAS7u7tIJBIyYuS3r0z/VFE6MVVVv38QicWyfGKc85X/+TBhjP1euHKvmvi0p9lb+7TH6bTRBz3P/wKaO0nlhJ1dKAAAAABJRU5ErkJggg=="
+      />
+    </div>
+    <strong class="mr-auto">Node Renamer</strong>
+    <div class="titlebar-elements">
+      <div class="titlebar-button">
+        <i class="material-icons info-button">info_outline</i>
+      </div>
+      <div class="titlebar-button">
+        <i class="material-icons">remove</i>
+      </div>
+      <div class="titlebar-button">
+        <i class="material-icons">fullscreen</i>
+      </div>
+      <div class="titlebar-button close-button">
+        <i class="material-icons">close</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main body -->
+  <div class="toast-body main-working-window">
+    <!-- Navigation bar -->
+    <nav class="nav" id="sidebar">
+      <button
+        type="button"
+        class="btn btn-primary btn-size"
+        id="files-window-btn"
+      >
+        Files and Folders
+      </button>
+      <br />
+      <button
+        type="button"
+        class="btn btn-primary btn-size"
+        id="rules-window-btn"
+      >
+        Rules
+      </button>
+      <br />
+    </nav>
+
+    <!-- Content area -->
+    <div class="content" id="content">
+      <!-- Add or remove files -->
+      <div class="files-element fade-in">
+        <button
+          type="button"
+          class="btn btn-primary btn-size-content"
+          id="add-folders-btn"
+        >
+          Add folders
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary btn-size-content"
+          id="add-files-btn"
+        >
+          Add files
+        </button>
+        <label class="switch">
+          <input type="checkbox" id="include-subfolders"/>
+          <span class="slider round"></span>
+        </label>
+        <label>Include Subfolders</label>
+
+        <button
+          type="button"
+          class="btn btn-primary btn-size-content remove-files-button"
+          id="remove-all-files-btn"
+        >
+          Remove all files
+        </button>
+        <!-- Files table -->
+        <div
+          class="files-table border border-secondary rounded-lg shadow"
+        ></div>
+      </div>
+
+      <!-- Add or remove rules -->
+      <div class="rules-element fade-in hide-all">
+        <label class="btn-size-content">Manage Rules</label>
+        <!-- List of renaming rules -->
+        <select
+          id="available-rules-list"
+          class="btn btn-secondary dropdown-toggle btn-size-content"
+        >
+          <option selected disabled hidden>Select</option>
+          <option value="1">Add Prefix</option>
+          <option value="2">Add Suffix</option>
+          <option value="3">Trim</option>
+          <option value="4">Replace</option>
+          <option value="5">Case Change</option>
+          <option value="6">Remove</option>
+          <option value="7">Numbering</option>
+          <option value="8">Time Stamp</option>
+          <option value="9">Insert At</option>
+          <option value="10">Reverse</option>
+        </select>
+        <!-- Option for name collision -->
+        <label class="btn-size-content btn-size-content"
+          >Name Collision Rule</label>
+        <select
+          id="name-collision-action-list"
+          class="btn btn-secondary dropdown-toggle"
+        >
+          <option selected value="ignoreCollision">Ignore</option>
+          <option value="numberIncrementCollision">
+            Increment By a Number
+          </option>
+          <option value="failCollision">Fail</option>
+        </select>
+        <button
+          type="button"
+          class="btn btn-primary btn-size-content remove-rules-button"
+          id="remove-all-rules-btn"
+        >
+          Remove all Rules
+        </button>
+        <!-- Rules table -->
+        <div
+          class="rules-table border border-secondary rounded-lg shadow"
+        ></div>
+        <button
+          type="button"
+          class="btn btn-primary rename-button"
+          id="analyze-filename-btn"
+        >
+          Analyze
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary rename-button"
+          id="rename-files-btn"
+        >
+          Rename
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,157 @@
+/* Disable text selection */
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+input,
+button,
+textarea,
+:focus {
+  outline: none;
+}
+
+/* Importing Material Icons for the titlebar */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"),
+    url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  height: 100%;
+  font-family: "BlinkMacSystemFont", "Segoe UI", Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+  color: var(--color);
+  background-color: rgb(17, 17, 17);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.main-window {
+  display: table;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+
+.main-working-window {
+  display: table;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+
+#sidebar {
+  display: table-cell;
+  width: 13%;
+  height: 100%;
+  vertical-align: top;
+}
+
+#content {
+  display: table-cell;
+  width: 87%;
+  vertical-align: top;
+}
+
+.files-element {
+  height: calc(100% - 3em);
+  width: 100%;
+  vertical-align: top;
+  border: 1px solid #dee2e6;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.rules-element {
+  height: calc(100% - 3em);
+  width: 100%;
+  vertical-align: top;
+  border-radius: 0.3rem;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons  */
+.btn-size {
+  position: relative;
+  margin: 20px;
+  height: 90px;
+  width: 100px;
+  font-weight: 600;
+}
+
+.btn-size-content {
+  position: relative;
+  margin: 12px 0px 12px 12px;
+}
+
+.remove-files-button {
+  position: absolute;
+  right: 24px;
+}
+
+.remove-rules-button {
+  position: absolute;
+  right: 24px;
+}
+
+.rename-button {
+  right: 24px;
+  margin: 12px 0px 12px 12px;
+}
+
+/* Hidden elements */
+.hide-all {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+/* Animations for transations */
+.fade-in {
+  animation: fadeIn ease 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Center any element */
+.center-element{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

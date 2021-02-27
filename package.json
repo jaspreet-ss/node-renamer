@@ -1,0 +1,63 @@
+{
+  "name": "node-renamer",
+  "productName": "Node Renamer",
+  "version": "0.0.1",
+  "description": "A Simple Batch Rename Application.",
+  "main": "main.js",
+  "files": [
+    "./app/view/html/"
+  ],
+  "build": {
+    "mac": {
+      "target": "pkg"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "tar.xz"
+      ],
+      "maintainer": "Jaspreet Singh <jaspreet28300@gmail.com>",
+      "category": "Utility",
+      "appId": "com.jass.NodeRenamer"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder -m --publish never",
+    "dist:win": "electron-builder --windows  --publish never",
+    "dist:deb": "electron-builder --linux  --publish never"
+  },
+  "repository": "https://github.com/singh-jass/node-renamer",
+  "keywords": [
+    "Rename",
+    "quick",
+    "start",
+    "batch",
+    "node"
+  ],
+  "author": "Jaspreet Singh <jaspreet28300@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.1.0"
+  },
+  "dependencies": {
+    "glob": "^7.1.6",
+    "js": "^0.1.0"
+  }
+}
